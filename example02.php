@@ -16,7 +16,7 @@ function makeColorfulHeading(): string {
 <body>
 <?php
 for ($x=0; $x<5; $x++) {
-    echo makeColorfulHeading() . PHP_EOL;
+    echo makeColorfulHeading() . "\n";
 }
 ?>
 </body>
