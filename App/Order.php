@@ -9,23 +9,22 @@ class Order
 
     public function __construct(string $price, User $user)
     {
-        $this->price = $price;
+        $this->price = $this->getFormattedPrice($price);
         $this->user = $user;
     }
 
     public function __toString(): string
     {
         $name = $this->user->getName();
-        $price = $this->getFormattedPrice();
         return sprintf(
             '%s made an order for %s.',
             $name,
-            $price
+            $this->price
         );
     }
 
-    private function getFormattedPrice(): string
+    private function getFormattedPrice(string $price): string
     {
-        return '$'.number_format($this->price, 2);
+        return '$'.number_format($price, 2);
     }
 }
