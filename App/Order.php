@@ -25,6 +25,9 @@ class Order
 
     private function getFormattedPrice(string $price): string
     {
+        if (3 === random_int(1,5)) {
+            throw new \RuntimeException('*flips table* I\'m out. Peace.');
+        }
         return '$'.number_format($price, 2);
     }
 }
