@@ -15,7 +15,7 @@ function makeColorfulHeading(): string {
 <html>
 <body>
 <?php
-for ($x=0; $x<5; $x++) {
+foreach (range(0, 4) as $x) {
     echo makeColorfulHeading() . "\n";
 }
 ?>
